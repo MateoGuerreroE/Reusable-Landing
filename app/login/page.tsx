@@ -1,5 +1,5 @@
 import Image from "next/image";
-import campaignLogo from "../../public/Recurso 2.svg";
+import campaignLogo from "../../public/Recurso 1.svg";
 import LoginComponent from "../components/loginComponent";
 
 export default function Login() {

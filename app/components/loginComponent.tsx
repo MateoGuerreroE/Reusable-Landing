@@ -1,14 +1,14 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function LoginComponent() {
   const router = useRouter();
-  if (typeof window !== undefined) {
-    const session = sessionStorage.getItem("session");
+  useEffect(() => {
+    const session = window.sessionStorage.getItem("session");
     if (session) router.push("/campaign-name");
-  }
+  }, []);
   const [email, setEmail] = useState<string>("");
   const [disclaimer, setDisclaimer] = useState<boolean>(false);
   const [errors, setErrors] = useState<string>("missing");
@@ -21,8 +21,10 @@ export default function LoginComponent() {
   }
 
   function handleSubmit() {
-    sessionStorage.setItem("session", email);
-    router.push("campaign-name");
+    if (typeof window !== undefined) {
+      sessionStorage.setItem("session", email);
+      router.push("campaign-name");
+    }
   }
 
   return (

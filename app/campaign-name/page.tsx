@@ -1,5 +1,5 @@
 import Image from "next/image";
-import campaingLogo from "../../public/Recurso 2.svg";
+import campaingLogo from "../../public/Recurso 1.svg";
 import sampleIMG1 from "../../public/279.jpg";
 import UseSessionStorage from "../hooks/useSessionStorage";
 
